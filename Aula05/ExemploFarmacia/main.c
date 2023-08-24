@@ -58,9 +58,11 @@ void executaOpcao(int opc){
         case 1:
             printf("Cadastro de Cliente\n");
             printf("Informe o nome:");
-            scanf("%[^\n]s", &cliente1.nome);
+            fflush(stdin);
+            scanf("%[^\n]s", cliente1.nome);
             printf("Informe o cpf:");
-            scanf("%[^\n]s", &cliente1.cpf);
+            fflush(stdin);
+            scanf("%[^\n]s", cliente1.cpf);
             system("pause");
         break;
         case 2:
@@ -74,10 +76,16 @@ void executaOpcao(int opc){
         break;
         case 4:
             printf("Consulta Cliente\n");
+            printf("Nome: %s\n", cliente1.nome);
+            printf("CPF: %s\n", cliente1.cpf);
             system("pause");
         break;
         case 5:
             printf("Consulta Produto\n");
+            printf("Codigo: %d\n", produto1.codigo);
+            printf("Descricao: %s\n", produto1.descricao);
+            printf("Preco: %.2f\n", produto1.preco);
+            printf("Quantidade Estoque: %.2f\n", produto1.qtdEstoque);
             system("pause");
         break;
         case 6:
@@ -98,8 +106,9 @@ void executaOpcao(int opc){
 void cadastraProduto(){
     printf("Informe o codigo:");
     scanf("%d", &produto1.codigo);
-    printf("Informe a descrição:");
-    scanf("%[^\n]s", &produto1.descricao);
+    printf("Informe a descricao:");
+    fflush(stdin);
+    scanf("%[^\n]s", produto1.descricao);
     printf("Informe o preco unitario:");
     scanf("%f", &produto1.preco);
     printf("Informe a quantidade em estoque:");
