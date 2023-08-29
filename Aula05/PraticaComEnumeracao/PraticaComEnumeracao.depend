@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1693338265 source:c:\users\professor\documents\fernandoaulas\exemplospe2023\aula05\praticacomenumeracao\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -58,16 +58,16 @@ int main(){
                 scanf("%d", &aux);
                 printf("%.2f ", calculadora[aux].valor1);
                 switch(calculadora[aux].operacao){
-                    case 1:
+                    case SOMA:
                         printf("+ ");
                     break;
-                    case 2:
+                    case SUBTRAI:
                         printf("- ");
                     break;
-                    case 3:
+                    case DIVIDE:
                         printf("/ ");
                     break;
-                    case 4:
+                    case MULTIPLICA:
                         printf("* ", calculadora[aux].valor1);
                     break;
                 }
