@@ -24,8 +24,8 @@ typedef struct{
 } Pedido;
 
 Cliente cliente1[5];
-Produto produto1;
-Pedido pedido1;
+Produto produto1[5];
+Pedido pedido1[5];
 
 int main(){
     int opc;
@@ -93,21 +93,25 @@ void executaOpcao(int opc){
         break;
         case 5:
             printf("Consulta Produto\n");
-            printf("Codigo: %d\n", produto1.codigo);
-            printf("Descricao: %s\n", produto1.descricao);
-            printf("Preco: %.2f\n", produto1.preco);
-            printf("Quantidade Estoque: %.2f\n", produto1.qtdEstoque);
+            printf("informe a posicao que deseja consultar:");
+            scanf("%d", &aux);
+            printf("Codigo: %d\n", produto1[aux].codigo);
+            printf("Descricao: %s\n", produto1[aux].descricao);
+            printf("Preco: %.2f\n", produto1[aux].preco);
+            printf("Quantidade Estoque: %.2f\n", produto1[aux].qtdEstoque);
             system("pause");
         break;
         case 6:
             printf("Consulta Pedido\n");
-            printf("Código: %d\n", pedido1.codigo);
-            //printf("Cliente: %s\n", cliente1.nome);
-            printf("Produto: %s\n", produto1.descricao);
-            printf("Preco Unit.: %.2f\n", produto1.preco);
-            printf("Qtde.: %.2f\n", pedido1.quantidade);
-            printf("Desconto: %.2f%\n", pedido1.desconto);
-            printf("Vlr. Total: %.2f\n", pedido1.vlrTotal);
+            printf("informe a posicao que deseja consultar:");
+            scanf("%d", &aux);
+            printf("Codigo: %d\n", pedido1[aux].codigo);
+            printf("Cliente: %s\n", cliente1[pedido1[aux].codCliente].nome);
+            printf("Produto: %s\n", produto1[pedido1[aux].codProduto].descricao);
+            printf("Preco Unit.: %.2f\n", produto1[pedido1[aux].codProduto].preco);
+            printf("Qtde.: %.2f\n", pedido1[aux].quantidade);
+            printf("Desconto: %.2f%\n", pedido1[aux].desconto);
+            printf("Vlr. Total: %.2f\n", pedido1[aux].vlrTotal);
             system("pause");
         break;
         case 7:
@@ -122,36 +126,46 @@ void executaOpcao(int opc){
 }
 
 void cadastraProduto(){
+    int aux;
+
+    printf("Informe a posicao (0-4):");
+    scanf("%d", &aux);
+
     printf("Informe o codigo:");
-    scanf("%d", &produto1.codigo);
+    scanf("%d", &produto1[aux].codigo);
     printf("Informe a descricao:");
     fflush(stdin);
-    scanf("%[^\n]s", produto1.descricao);
+    scanf("%[^\n]s", produto1[aux].descricao);
     printf("Informe o preco unitario:");
-    scanf("%f", &produto1.preco);
+    scanf("%f", &produto1[aux].preco);
     printf("Informe a quantidade em estoque:");
-    scanf("%f", &produto1.qtdEstoque);
+    scanf("%f", &produto1[aux].qtdEstoque);
 }
 
 void  cadastroPedido(){
+    int aux;
+
+    printf("Informe a posicao (0-4):");
+    scanf("%d", &aux);
+
     printf("Informe o codigo:");
-    scanf("%d", &pedido1.codigo);
+    scanf("%d", &pedido1[aux].codigo);
     printf("Informe o cliente:");
-    scanf("%d", &pedido1.codCliente);
+    scanf("%d", &pedido1[aux].codCliente);
     printf("Informe o produto:");
-    scanf("%d", &pedido1.codProduto);
+    scanf("%d", &pedido1[aux].codProduto);
     do{
         printf("Informe a quantidade:");
-        scanf("%f", &pedido1.quantidade);
-        if(produto1.qtdEstoque < pedido1.quantidade){
+        scanf("%f", &pedido1[aux].quantidade);
+        if(produto1[pedido1[aux].codProduto].qtdEstoque < pedido1[aux].quantidade){
             printf("Quantidade invalida, quantidade maior que o estoque!\n");
         }
-    }while(pedido1.quantidade > produto1.qtdEstoque);
+    }while(pedido1[aux].quantidade > produto1[pedido1[aux].codProduto].qtdEstoque);
     printf("Informe o desconto:");
-    scanf("%f", &pedido1.desconto);
+    scanf("%f", &pedido1[aux].desconto);
 
-    produto1.qtdEstoque -= pedido1.quantidade;
+    produto1[pedido1[aux].codProduto].qtdEstoque -= pedido1[aux].quantidade;
 
-    pedido1.vlrTotal = (pedido1.quantidade * produto1.preco) * (1-(pedido1.desconto/100));
+    pedido1[aux].vlrTotal = (pedido1[aux].quantidade * produto1[pedido1[aux].codProduto].preco) * (1-(pedido1[aux].desconto/100));
 
 }
