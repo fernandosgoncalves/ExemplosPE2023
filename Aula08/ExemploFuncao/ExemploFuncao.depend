@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1693933266 source:c:\users\professor\documents\fernandoaulas\exemplospe2023\aula08\exemplofuncao\main.c
+	<stdio.h>
+	<stdlib.h>
+
