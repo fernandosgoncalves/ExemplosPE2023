@@ -9,6 +9,8 @@ int main(int argc, char *argv[]){
         printf("Sem parametros!");
         exit(1);
     }else{
+        //atoi função que converte um char em inteiro
+        //atof função que converte um char em um float
         valor1 = atoi(argv[1]);
         valor2 = atoi(argv[3]);
     }
