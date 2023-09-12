@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1694541554 source:c:\users\aluno\documents\fernandoaulas\exemplospe2023\aula08\inverteordem\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
