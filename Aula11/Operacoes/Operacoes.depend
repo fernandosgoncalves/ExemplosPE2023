@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1695749848 source:c:\users\professor\documents\fernandoaulas\exemplospe2023\aula11\operacoes\main.c
+	"operacoes.h"
+
+1695749190 c:\users\professor\documents\fernandoaulas\exemplospe2023\aula11\operacoes\operacoes.h
+	<stdio.h>
+	<stdlib.h>
+
