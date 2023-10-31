@@ -3,9 +3,10 @@
 
 int main()
 {
-    int x, *p;
+    int x, *p, lista[5];
     char *p1;
     char s[80];
+    int min, max;
 
     do{
         p1 = s;
@@ -16,6 +17,16 @@ int main()
     x = 10;
     p = &x;
 
+    busca(lista, pMin, pMax);
+
     printf("%d\n", *p);
+
+    printf("Minimo: %d\n", *pMin);
+    printf("Maximo: %d\n", *pMax);
     return 0;
+}
+
+
+void busca (){
+
 }
