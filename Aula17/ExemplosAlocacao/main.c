@@ -55,6 +55,7 @@ int main(){
     lista++;
     printf("Codigo: %d - Modelo: %s - Temp: %.2f\n", lista->codigo,
                lista->modelo, lista->temp);
+    lista--;
 
     return 0;
 }
