@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1699992578 source:c:\users\professor\documents\fernandoaulas\exemplospe2023\aula18\paciente\main.c
+	"paciente.h"
+
+1699992470 c:\users\professor\documents\fernandoaulas\exemplospe2023\aula18\paciente\paciente.h
+	<stdio.h>
+	<stdlib.h>
+
